@@ -37,3 +37,6 @@
 *.png
 *.jpg
 *.js
+*.md5
+*.dot
+*.css
