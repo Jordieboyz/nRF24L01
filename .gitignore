@@ -13,10 +13,6 @@
 *.ld
 *.map
 *.sln
-*.filters
-*.user
-*.vcxproj
-/Debug
-/.vs
-/docs
 *.exe
+/Documentation
+/documentation/search
