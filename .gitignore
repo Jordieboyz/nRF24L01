@@ -2,6 +2,7 @@
 *.link
 *.png
 *.jpg
+*.html
 *.js
 *.md5
 *.dot
