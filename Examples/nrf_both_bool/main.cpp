@@ -38,23 +38,23 @@ int main(){
     RF24_2.write_adress_RX(0, adress);
     RF24_2.RX_mode();   
 
-    // std::array<uint8_t, 32> payloadR;
+    std::array<uint8_t, 32> payloadR;
 
     for(;;)
     {
-        // bool buttonState = button.read();
-        // std::array<uint8_t, 32> payload = { !buttonState };
+        bool buttonState = button.read();
+        std::array<uint8_t, 32> payload = { !buttonState };
 
-        // RF24_1.write_noack_payload( payload );
-        
-        // if(RF24_2.read( payloadR ) == 1){
-        //     led.write(1);
-        //     motor.write(1);
-        // }
-        // else{
-        //     led.write(0);
-        //     motor.write(0);
-        // }
+        RF24_1.write_noack_payload( payload );
+        RF24_2.read( payloadR );
+
+        // bool a = payload[0];
+        if(payloadR[0] == 1){
+            led.write(1);
+        }
+        else{
+            led.write(0);
+        }
 
     }
 }

@@ -7,7 +7,7 @@ int main(){
     namespace target = hwlib::target;
 
     auto button = target::pin_in(target::pins::d7);
-    auto led    = target::pin_out(target::pins::d28);
+    auto led    = target::pin_out(target::pins::d30);
 
     auto ce_1   = target::pin_out(target::pins::d8);
     auto csn_1  = target::pin_out(target::pins::d9);    
@@ -27,31 +27,29 @@ int main(){
     NRF24 RF24_1 = NRF24(spi_bus_1, ce_1, csn_1);
     NRF24 RF24_2 = NRF24(spi_bus_2, ce_2, csn_2);
 
-    std::array<uint8_t, 5> adress = { 0x34, 0xFF, 0xFF, 0xFF, 0xFF };
+    std::array<uint8_t, 5> adress = { 0xAA, 0xFF, 0xFF, 0xFF, 0xFF };
 
-    RF24_1.startUpChip();
-    RF24_2.startUpChip();
+    RF24_1.start_up_chip();
+    RF24_2.start_up_chip();
 
-    RF24_1.openWritingPipe(adress);
+    RF24_1.write_adress_TX(adress);
     RF24_1.TX_mode();
 
-    RF24_2.openReadingPipe(0, adress);
+    RF24_2.write_adress_RX(0, adress);
     RF24_2.RX_mode();   
 
+    std::array<uint8_t, 32> payload = { "hello world" };
     std::array<uint8_t, 32> payloadR;
 
     for(;;)
-    {
-        bool button_state = button.read();
-        std::array<uint8_t, 32> payload = { button_state };
+    {   
+        RF24_1.write_noack( payload );
+        RF24_2.read( payloadR );
 
-        RF24_1.write( payload );
-
-        if(RF24_2.read( payloadR ) == 0 ){
-            led.write(1);
+        hwlib::string<32> string_to_receive = "";
+        for(uint8_t data : payloadR){
+            string_to_receive += (char)data;
         }
-        else{
-            led.write(0);
-        }
+        hwlib::cout << string_to_receive << "\n" << hwlib::flush;
     }
 }
