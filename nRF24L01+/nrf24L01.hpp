@@ -37,7 +37,7 @@ private:
     const uint8_t pipeEnable[6] = { ERX_P0, ERX_P1, ERX_P2, ERX_P3, ERX_P4, ERX_P5 };
     const uint8_t pipeAdress[6] = { RX_ADDR_P0, RX_ADDR_P1, RX_ADDR_P2, RX_ADDR_P3, RX_ADDR_P4, RX_ADDR_P5 };
     const uint8_t pipeWidth[6]  = { RX_PW_P0, RX_PW_P1, RX_PW_P2, RX_PW_P3, RX_PW_P4, RX_PW_P5 };
-public:
+protected:
     /// \brief
     /// Read from a regsiter
     /// \details
@@ -64,18 +64,6 @@ public:
     void write_register(uint8_t reg, std::array<uint8_t, 5> & bytes);
 
     /// \brief
-    /// flush RX
-    /// \details
-    /// This function flushes the RX queue
-    void flush_RX();
-    
-    /// \brief
-    /// flush TX
-    /// \details
-    /// This function flushes the TX queue
-    void flush_TX();
-
-    /// \brief
     /// read incoming data
     /// \details
     /// This function reads the data from the RX_PLD (arrived data on the RX FIFO)
@@ -89,11 +77,29 @@ public:
     void write_payload(std::array<uint8_t, 32> & payload);
 
     /// \brief
+    /// flush RX
+    /// \details
+    /// This function flushes the RX queue
+    void flush_RX();
+    
+    /// \brief
+    /// flush TX
+    /// \details
+    /// This function flushes the TX queue
+    void flush_TX();
+
+    /// \brief
     /// Enable the features
     /// \details
     /// This function enables the right featuers on the nRF24L01+ for example
     /// the no_ack functionality
     void enable_features();
+
+    /// \brief
+    /// reset enabled pipes
+    /// \details
+    /// This function resets all pipes 2-5, but keeps pipe 0 and 1 enabled
+    void reset_enabled_pipes();
 public:
     /// \brief
     /// constructor nRF24L01+
