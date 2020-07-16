@@ -8,11 +8,10 @@
 *.css
 *.c
 *.o
-*.bin
+*.bins
 *.elf
 *.ld
 *.map
 *.sln
 *.exe
 /Documentation
-/documentation/search
