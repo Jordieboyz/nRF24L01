@@ -2,10 +2,8 @@
 *.link
 *.png
 *.jpg
-*.js
-*.md5
+
 *.dot
-*.css
 *.c
 *.o
 *.bins
@@ -17,6 +15,3 @@
 *.tex
 *.sty
 *.tmp
-*.html
-/Documentation
-!index.html
