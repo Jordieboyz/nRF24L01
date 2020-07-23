@@ -17,3 +17,5 @@
 *.tex
 *.sty
 *.tmp
+*.html
+!index.html
