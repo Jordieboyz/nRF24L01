@@ -18,4 +18,5 @@
 *.sty
 *.tmp
 *.html
+/Documentation
 !index.html
