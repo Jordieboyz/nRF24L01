@@ -15,3 +15,6 @@
 *.map
 *.sln
 *.exe
+*.tex
+*.sty
+*.tmp
