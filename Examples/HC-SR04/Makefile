@@ -9,13 +9,13 @@
 #############################################################################
 
 # source files in this project (main.cpp is automatically assumed)
-SOURCES := nrf24L01.cpp 
+SOURCES := 
 
 # header files in this project
-HEADERS := nrf24L01.hpp registers.hpp pulse.hpp
+HEADERS := pulse.hpp 
 
 # other places to look for files for this project
-SEARCH  := ../../nRF24L01+ ../../HC-SR04
+SEARCH  := ../../HC-SR04
 
 # set RELATIVE to the next higher directory 
 # and defer to the Makefile.* there

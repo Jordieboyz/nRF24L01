@@ -12,7 +12,7 @@
 SOURCES := nrf24L01.cpp 
 
 # header files in this project
-HEADERS := nrf24L01.hpp registers.hpp pulse.hpp
+HEADERS := nrf24L01.hpp registers.hpp
 
 # other places to look for files for this project
 SEARCH  := ../../nRF24L01+ ../../HC-SR04

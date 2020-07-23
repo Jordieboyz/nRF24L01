@@ -37,6 +37,7 @@ private:
     const uint8_t pipeEnable[6] = { ERX_P0, ERX_P1, ERX_P2, ERX_P3, ERX_P4, ERX_P5 };
     const uint8_t pipeAdress[6] = { RX_ADDR_P0, RX_ADDR_P1, RX_ADDR_P2, RX_ADDR_P3, RX_ADDR_P4, RX_ADDR_P5 };
     const uint8_t pipeWidth[6]  = { RX_PW_P0, RX_PW_P1, RX_PW_P2, RX_PW_P3, RX_PW_P4, RX_PW_P5 };
+    
 protected:
     /// \brief
     /// Read from a regsiter
@@ -51,20 +52,19 @@ protected:
     void write_register(uint8_t reg, uint8_t byte);
 
     /// \brief
-    /// read multiple bytes from a single register
+    /// Reads multiple bytes from a single register
     /// \details
     /// This function reads the an x amount of incoming bytes (from the MISO pin)
     void read_register(uint8_t reg, std::array<uint8_t, 5> & bytes);
 
     /// \brief
-    /// write multiple bytes to a register
+    /// Writes multiple bytes to a register
     /// \details
     /// This function writes n bytes to one of the registers of the nRF24L01+
-    // template< size_t n>
     void write_register(uint8_t reg, std::array<uint8_t, 5> & bytes);
 
     /// \brief
-    /// read incoming data
+    /// Read incoming data
     /// \details
     /// This function reads the data from the RX_PLD (arrived data on the RX FIFO)
     /// and saves it in the given array for further use
@@ -77,13 +77,13 @@ protected:
     void write_payload(std::array<uint8_t, 32> & payload);
 
     /// \brief
-    /// flush RX
+    /// Flush RX
     /// \details
     /// This function flushes the RX queue
     void flush_RX();
     
     /// \brief
-    /// flush TX
+    /// Flush TX
     /// \details
     /// This function flushes the TX queue
     void flush_TX();
@@ -96,13 +96,13 @@ protected:
     void enable_features();
 
     /// \brief
-    /// reset enabled pipes
+    /// Reset enabled pipes
     /// \details
     /// This function resets all pipes 2-5, but keeps pipe 0 and 1 enabled
     void reset_enabled_pipes();
 public:
     /// \brief
-    /// constructor nRF24L01+
+    /// Constructor nRF24L01+
     /// \details
     /// The nRF24L01+ needs a ce and csn pin defenition to work
     NRF24(hwlib::spi_bus & spi, hwlib::pin_out & ce, hwlib::pin_out & csn) :
@@ -110,9 +110,9 @@ public:
     {}
 
     /// \brief
-    /// The startUP of the nRF24L01+
+    /// The start of the nRF24L01+
     /// \details
-    /// The funtion gets the chip ready to write and read from the nRF24L01+
+    /// This funtion gets the chip ready to write and read from the nRF24L01+
     /// This funtion also ensures there are correct values in a couple registers
     /// make sure this is the first function you call on the nRF24L01+ 
     void start_up_chip();
@@ -130,43 +130,44 @@ public:
     void set_data_rate( dataRate rate );
 
     /// \brief
-    /// trigger RX_MODE
+    /// Trigger receive mode
     /// \details
-    /// This function forces the nRF24L01+ to operate in the RX mode
+    /// This function forces the nRF24L01+ to operate in the RX ( receive ) mode
     void RX_mode();
     
     /// \brief
-    /// trigger tX_MODE
+    /// Trigger transmit mode
     /// \details
-    /// This function forces the nRF24L01+ to operate in the TX mode
+    /// This function forces the nRF24L01+ to operate in the TX ( transmit ) mode
     void TX_mode();
     
     /// \brief
-    /// set the transmit adress
+    /// Set the transmit adress
     /// \details
     /// This function writes the given adress to the registers so the nRF24L01+
     /// can communicate with another nRF24L01+                         
     void write_adress_TX(std::array<uint8_t, 5> & adress);
 
     /// \brief
-    /// set the receive adress
+    /// Set the receive adress
     /// \details
     /// This funtion enables the given pipe and writes the give adress to the
     /// right registers so the nRF24L01+ can listen to the transmitted data on the right pipe 
     void write_adress_RX(uint8_t pipe, std::array<uint8_t, 5> & adress);
 
     /// \brief
-    /// read incoming data
+    /// Read incoming data
     /// \details
     /// reads the incoming data and returns the first byte
     void read(std::array<uint8_t, 32> & payload );
 
     /// \brief
-    /// write payload (without ack)
+    /// Write data (without ack)
     /// \details
-    /// This funtion writes the data to another nRF24L01+ module without
-    /// waiting for an acknowledge from the receiver
+    /// This funtion writes the data to the transmit queue, depending on the mode of 
+    /// the nRF24L01+ module, the data will automaticly dissappear from the queue
     void write_noack(std::array<uint8_t, 32> & payload);
+
 };
 
 
