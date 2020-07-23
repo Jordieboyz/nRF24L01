@@ -1,7 +1,0 @@
-\hypertarget{nrf24L01_8cpp}{}\section{n\+R\+F24\+L01+/nrf24\+L01.cpp File Reference}
-\label{nrf24L01_8cpp}\index{n\+R\+F24\+L01+/nrf24\+L01.\+cpp@{n\+R\+F24\+L01+/nrf24\+L01.\+cpp}}
-{\ttfamily \#include \char`\"{}nrf24\+L01.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}registers.\+hpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}hwlib.\+hpp\char`\"{}}\newline
-Include dependency graph for nrf24\+L01.\+cpp\+:
-% FIG 0
