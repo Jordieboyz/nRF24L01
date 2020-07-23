@@ -1,0 +1,276 @@
+\hypertarget{classNRF24}{}\section{N\+R\+F24 Class Reference}
+\label{classNRF24}\index{N\+R\+F24@{N\+R\+F24}}
+
+
+n\+R\+F24\+L01+ driver  
+
+
+
+
+{\ttfamily \#include $<$nrf24\+L01.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classNRF24_a09269e76d1390baf00cc06d8f99ae422}{N\+R\+F24} (hwlib\+::spi\+\_\+bus \&spi, hwlib\+::pin\+\_\+out \&ce, hwlib\+::pin\+\_\+out \&csn)
+\begin{DoxyCompactList}\small\item\em Constructor n\+R\+F24\+L01+. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a74955df5f940b99709ddea27cfd5422e}{start\+\_\+up\+\_\+chip} ()
+\begin{DoxyCompactList}\small\item\em The start of the n\+R\+F24\+L01+. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a300f0a27471f25d498809799161d811f}{set\+\_\+channel} (int channel)
+\begin{DoxyCompactList}\small\item\em Set a channel. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a57ed330144bf0fd0f72ace57cc0a63bc}{set\+\_\+data\+\_\+rate} (data\+Rate rate)
+\begin{DoxyCompactList}\small\item\em Set the data rate. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a073930d0c3f900010309670712acc677}{R\+X\+\_\+mode} ()
+\begin{DoxyCompactList}\small\item\em Trigger receive mode. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_aacd402b288514cc6c601b4041dab27d3}{T\+X\+\_\+mode} ()
+\begin{DoxyCompactList}\small\item\em Trigger transmit mode. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_aa6bf7e16ef36684275d7e2ff0a8d4d98}{write\+\_\+adress\+\_\+\+TX} (std\+::array$<$ uint8\+\_\+t, 5 $>$ \&adress)
+\begin{DoxyCompactList}\small\item\em Set the transmit adress. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_acd69b21875e0573a52ecaf707d1364b0}{write\+\_\+adress\+\_\+\+RX} (uint8\+\_\+t pipe, std\+::array$<$ uint8\+\_\+t, 5 $>$ \&adress)
+\begin{DoxyCompactList}\small\item\em Set the receive adress. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a30b979af4d98047b48b2895c6eeb2116}{read} (std\+::array$<$ uint8\+\_\+t, 32 $>$ \&payload)
+\begin{DoxyCompactList}\small\item\em Read incoming data. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a83fa4502e17465aaf55fc65c80d30f8c}{write\+\_\+noack} (std\+::array$<$ uint8\+\_\+t, 32 $>$ \&payload)
+\begin{DoxyCompactList}\small\item\em Write data (without ack) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{classNRF24_abaddce712f45103e2ba5c7dd469d0f43}{read\+\_\+register} (uint8\+\_\+t reg)
+\begin{DoxyCompactList}\small\item\em Read from a regsiter. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_abbcc96350aaa147dca8af1f7e93ea6ec}{write\+\_\+register} (uint8\+\_\+t reg, uint8\+\_\+t byte)
+\begin{DoxyCompactList}\small\item\em Write to a regsiter. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a3e34e1a79e35a382137b176cbe4359b8}{read\+\_\+register} (uint8\+\_\+t reg, std\+::array$<$ uint8\+\_\+t, 5 $>$ \&bytes)
+\begin{DoxyCompactList}\small\item\em Reads multiple bytes from a single register. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_afca9ea1e390b23f5e220a0d0e823a4e3}{write\+\_\+register} (uint8\+\_\+t reg, std\+::array$<$ uint8\+\_\+t, 5 $>$ \&bytes)
+\begin{DoxyCompactList}\small\item\em Writes multiple bytes to a register. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a3ad77490f14987e7349425799d40207e}{read\+\_\+payload} (std\+::array$<$ uint8\+\_\+t, 32 $>$ \&payload)
+\begin{DoxyCompactList}\small\item\em Read incoming data. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a30f43278c0048409e32fb21fff5f448b}{write\+\_\+payload} (std\+::array$<$ uint8\+\_\+t, 32 $>$ \&payload)
+\begin{DoxyCompactList}\small\item\em Write data to payload. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_af2837ae132e4513f0b3c08ad4389243a}{flush\+\_\+\+RX} ()
+\begin{DoxyCompactList}\small\item\em Flush RX. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_ae1be2e84f708565766cbf162f2efcd42}{flush\+\_\+\+TX} ()
+\begin{DoxyCompactList}\small\item\em Flush TX. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a12b6526fe059ca63ecd9ecda7f4099c8}{enable\+\_\+features} ()
+\begin{DoxyCompactList}\small\item\em Enable the features. \end{DoxyCompactList}\item 
+void \hyperlink{classNRF24_a18094a007c01ae62bd86a6e314bf0416}{reset\+\_\+enabled\+\_\+pipes} ()
+\begin{DoxyCompactList}\small\item\em Reset enabled pipes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+n\+R\+F24\+L01+ driver 
+
+This driver is a driver for the n\+R\+F24\+L01+ It\textquotesingle{}s a fairly easy library using the most significant functions of the n\+R\+F24\+L01+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNRF24_a09269e76d1390baf00cc06d8f99ae422}\label{classNRF24_a09269e76d1390baf00cc06d8f99ae422}} 
+\index{N\+R\+F24@{N\+R\+F24}!N\+R\+F24@{N\+R\+F24}}
+\index{N\+R\+F24@{N\+R\+F24}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{N\+R\+F24()}{NRF24()}}
+{\footnotesize\ttfamily N\+R\+F24\+::\+N\+R\+F24 (\begin{DoxyParamCaption}\item[{hwlib\+::spi\+\_\+bus \&}]{spi,  }\item[{hwlib\+::pin\+\_\+out \&}]{ce,  }\item[{hwlib\+::pin\+\_\+out \&}]{csn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor n\+R\+F24\+L01+. 
+
+The n\+R\+F24\+L01+ needs a ce and csn pin defenition to work 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classNRF24_a12b6526fe059ca63ecd9ecda7f4099c8}\label{classNRF24_a12b6526fe059ca63ecd9ecda7f4099c8}} 
+\index{N\+R\+F24@{N\+R\+F24}!enable\+\_\+features@{enable\+\_\+features}}
+\index{enable\+\_\+features@{enable\+\_\+features}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{enable\+\_\+features()}{enable\_features()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::enable\+\_\+features (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Enable the features. 
+
+This function enables the right featuers on the n\+R\+F24\+L01+ for example the no\+\_\+ack functionality \mbox{\Hypertarget{classNRF24_af2837ae132e4513f0b3c08ad4389243a}\label{classNRF24_af2837ae132e4513f0b3c08ad4389243a}} 
+\index{N\+R\+F24@{N\+R\+F24}!flush\+\_\+\+RX@{flush\+\_\+\+RX}}
+\index{flush\+\_\+\+RX@{flush\+\_\+\+RX}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{flush\+\_\+\+R\+X()}{flush\_RX()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::flush\+\_\+\+RX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flush RX. 
+
+This function flushes the RX queue \mbox{\Hypertarget{classNRF24_ae1be2e84f708565766cbf162f2efcd42}\label{classNRF24_ae1be2e84f708565766cbf162f2efcd42}} 
+\index{N\+R\+F24@{N\+R\+F24}!flush\+\_\+\+TX@{flush\+\_\+\+TX}}
+\index{flush\+\_\+\+TX@{flush\+\_\+\+TX}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{flush\+\_\+\+T\+X()}{flush\_TX()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::flush\+\_\+\+TX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flush TX. 
+
+This function flushes the TX queue \mbox{\Hypertarget{classNRF24_a30b979af4d98047b48b2895c6eeb2116}\label{classNRF24_a30b979af4d98047b48b2895c6eeb2116}} 
+\index{N\+R\+F24@{N\+R\+F24}!read@{read}}
+\index{read@{read}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::read (\begin{DoxyParamCaption}\item[{std\+::array$<$ uint8\+\_\+t, 32 $>$ \&}]{payload }\end{DoxyParamCaption})}
+
+
+
+Read incoming data. 
+
+reads the incoming data and returns the first byte \mbox{\Hypertarget{classNRF24_a3ad77490f14987e7349425799d40207e}\label{classNRF24_a3ad77490f14987e7349425799d40207e}} 
+\index{N\+R\+F24@{N\+R\+F24}!read\+\_\+payload@{read\+\_\+payload}}
+\index{read\+\_\+payload@{read\+\_\+payload}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{read\+\_\+payload()}{read\_payload()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::read\+\_\+payload (\begin{DoxyParamCaption}\item[{std\+::array$<$ uint8\+\_\+t, 32 $>$ \&}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Read incoming data. 
+
+This function reads the data from the R\+X\+\_\+\+P\+LD (arrived data on the RX F\+I\+FO) and saves it in the given array for further use \mbox{\Hypertarget{classNRF24_abaddce712f45103e2ba5c7dd469d0f43}\label{classNRF24_abaddce712f45103e2ba5c7dd469d0f43}} 
+\index{N\+R\+F24@{N\+R\+F24}!read\+\_\+register@{read\+\_\+register}}
+\index{read\+\_\+register@{read\+\_\+register}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{read\+\_\+register()}{read\_register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint8\+\_\+t N\+R\+F24\+::read\+\_\+register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Read from a regsiter. 
+
+This funtion reads one byte from the given register \mbox{\Hypertarget{classNRF24_a3e34e1a79e35a382137b176cbe4359b8}\label{classNRF24_a3e34e1a79e35a382137b176cbe4359b8}} 
+\index{N\+R\+F24@{N\+R\+F24}!read\+\_\+register@{read\+\_\+register}}
+\index{read\+\_\+register@{read\+\_\+register}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{read\+\_\+register()}{read\_register()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void N\+R\+F24\+::read\+\_\+register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{std\+::array$<$ uint8\+\_\+t, 5 $>$ \&}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reads multiple bytes from a single register. 
+
+This function reads the an x amount of incoming bytes (from the M\+I\+SO pin) \mbox{\Hypertarget{classNRF24_a18094a007c01ae62bd86a6e314bf0416}\label{classNRF24_a18094a007c01ae62bd86a6e314bf0416}} 
+\index{N\+R\+F24@{N\+R\+F24}!reset\+\_\+enabled\+\_\+pipes@{reset\+\_\+enabled\+\_\+pipes}}
+\index{reset\+\_\+enabled\+\_\+pipes@{reset\+\_\+enabled\+\_\+pipes}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{reset\+\_\+enabled\+\_\+pipes()}{reset\_enabled\_pipes()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::reset\+\_\+enabled\+\_\+pipes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reset enabled pipes. 
+
+This function resets all pipes 2-\/5, but keeps pipe 0 and 1 enabled \mbox{\Hypertarget{classNRF24_a073930d0c3f900010309670712acc677}\label{classNRF24_a073930d0c3f900010309670712acc677}} 
+\index{N\+R\+F24@{N\+R\+F24}!R\+X\+\_\+mode@{R\+X\+\_\+mode}}
+\index{R\+X\+\_\+mode@{R\+X\+\_\+mode}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{R\+X\+\_\+mode()}{RX\_mode()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::\+R\+X\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Trigger receive mode. 
+
+This function forces the n\+R\+F24\+L01+ to operate in the RX ( receive ) mode \mbox{\Hypertarget{classNRF24_a300f0a27471f25d498809799161d811f}\label{classNRF24_a300f0a27471f25d498809799161d811f}} 
+\index{N\+R\+F24@{N\+R\+F24}!set\+\_\+channel@{set\+\_\+channel}}
+\index{set\+\_\+channel@{set\+\_\+channel}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{set\+\_\+channel()}{set\_channel()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::set\+\_\+channel (\begin{DoxyParamCaption}\item[{int}]{channel }\end{DoxyParamCaption})}
+
+
+
+Set a channel. 
+
+This funtion sets the channel whereover the n\+R\+F24\+L01+ will communicate \mbox{\Hypertarget{classNRF24_a57ed330144bf0fd0f72ace57cc0a63bc}\label{classNRF24_a57ed330144bf0fd0f72ace57cc0a63bc}} 
+\index{N\+R\+F24@{N\+R\+F24}!set\+\_\+data\+\_\+rate@{set\+\_\+data\+\_\+rate}}
+\index{set\+\_\+data\+\_\+rate@{set\+\_\+data\+\_\+rate}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{set\+\_\+data\+\_\+rate()}{set\_data\_rate()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::set\+\_\+data\+\_\+rate (\begin{DoxyParamCaption}\item[{data\+Rate}]{rate }\end{DoxyParamCaption})}
+
+
+
+Set the data rate. 
+
+This funtion sets the speed of the output data going through the air \mbox{\Hypertarget{classNRF24_a74955df5f940b99709ddea27cfd5422e}\label{classNRF24_a74955df5f940b99709ddea27cfd5422e}} 
+\index{N\+R\+F24@{N\+R\+F24}!start\+\_\+up\+\_\+chip@{start\+\_\+up\+\_\+chip}}
+\index{start\+\_\+up\+\_\+chip@{start\+\_\+up\+\_\+chip}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{start\+\_\+up\+\_\+chip()}{start\_up\_chip()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::start\+\_\+up\+\_\+chip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+The start of the n\+R\+F24\+L01+. 
+
+=================================================================
+
+This funtion gets the chip ready to write and read from the n\+R\+F24\+L01+ This funtion also ensures there are correct values in a couple registers make sure this is the first function you call on the n\+R\+F24\+L01+ \mbox{\Hypertarget{classNRF24_aacd402b288514cc6c601b4041dab27d3}\label{classNRF24_aacd402b288514cc6c601b4041dab27d3}} 
+\index{N\+R\+F24@{N\+R\+F24}!T\+X\+\_\+mode@{T\+X\+\_\+mode}}
+\index{T\+X\+\_\+mode@{T\+X\+\_\+mode}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{T\+X\+\_\+mode()}{TX\_mode()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::\+T\+X\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Trigger transmit mode. 
+
+This function forces the n\+R\+F24\+L01+ to operate in the TX ( transmit ) mode \mbox{\Hypertarget{classNRF24_acd69b21875e0573a52ecaf707d1364b0}\label{classNRF24_acd69b21875e0573a52ecaf707d1364b0}} 
+\index{N\+R\+F24@{N\+R\+F24}!write\+\_\+adress\+\_\+\+RX@{write\+\_\+adress\+\_\+\+RX}}
+\index{write\+\_\+adress\+\_\+\+RX@{write\+\_\+adress\+\_\+\+RX}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{write\+\_\+adress\+\_\+\+R\+X()}{write\_adress\_RX()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::write\+\_\+adress\+\_\+\+RX (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pipe,  }\item[{std\+::array$<$ uint8\+\_\+t, 5 $>$ \&}]{adress }\end{DoxyParamCaption})}
+
+
+
+Set the receive adress. 
+
+This funtion enables the given pipe and writes the give adress to the right registers so the n\+R\+F24\+L01+ can listen to the transmitted data on the right pipe \mbox{\Hypertarget{classNRF24_aa6bf7e16ef36684275d7e2ff0a8d4d98}\label{classNRF24_aa6bf7e16ef36684275d7e2ff0a8d4d98}} 
+\index{N\+R\+F24@{N\+R\+F24}!write\+\_\+adress\+\_\+\+TX@{write\+\_\+adress\+\_\+\+TX}}
+\index{write\+\_\+adress\+\_\+\+TX@{write\+\_\+adress\+\_\+\+TX}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{write\+\_\+adress\+\_\+\+T\+X()}{write\_adress\_TX()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::write\+\_\+adress\+\_\+\+TX (\begin{DoxyParamCaption}\item[{std\+::array$<$ uint8\+\_\+t, 5 $>$ \&}]{adress }\end{DoxyParamCaption})}
+
+
+
+Set the transmit adress. 
+
+This function writes the given adress to the registers so the n\+R\+F24\+L01+ can communicate with another n\+R\+F24\+L01+ \mbox{\Hypertarget{classNRF24_a83fa4502e17465aaf55fc65c80d30f8c}\label{classNRF24_a83fa4502e17465aaf55fc65c80d30f8c}} 
+\index{N\+R\+F24@{N\+R\+F24}!write\+\_\+noack@{write\+\_\+noack}}
+\index{write\+\_\+noack@{write\+\_\+noack}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{write\+\_\+noack()}{write\_noack()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::write\+\_\+noack (\begin{DoxyParamCaption}\item[{std\+::array$<$ uint8\+\_\+t, 32 $>$ \&}]{payload }\end{DoxyParamCaption})}
+
+
+
+Write data (without ack) 
+
+This funtion writes the data to the transmit queue, depending on the mode of the n\+R\+F24\+L01+ module, the data will automaticly dissappear from the queue \mbox{\Hypertarget{classNRF24_a30f43278c0048409e32fb21fff5f448b}\label{classNRF24_a30f43278c0048409e32fb21fff5f448b}} 
+\index{N\+R\+F24@{N\+R\+F24}!write\+\_\+payload@{write\+\_\+payload}}
+\index{write\+\_\+payload@{write\+\_\+payload}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{write\+\_\+payload()}{write\_payload()}}
+{\footnotesize\ttfamily void N\+R\+F24\+::write\+\_\+payload (\begin{DoxyParamCaption}\item[{std\+::array$<$ uint8\+\_\+t, 32 $>$ \&}]{payload }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write data to payload. 
+
+This function writes the given payload to the payload queque \mbox{\Hypertarget{classNRF24_abbcc96350aaa147dca8af1f7e93ea6ec}\label{classNRF24_abbcc96350aaa147dca8af1f7e93ea6ec}} 
+\index{N\+R\+F24@{N\+R\+F24}!write\+\_\+register@{write\+\_\+register}}
+\index{write\+\_\+register@{write\+\_\+register}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{write\+\_\+register()}{write\_register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void N\+R\+F24\+::write\+\_\+register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{uint8\+\_\+t}]{byte }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Write to a regsiter. 
+
+This funtion writes one byte to the given register \mbox{\Hypertarget{classNRF24_afca9ea1e390b23f5e220a0d0e823a4e3}\label{classNRF24_afca9ea1e390b23f5e220a0d0e823a4e3}} 
+\index{N\+R\+F24@{N\+R\+F24}!write\+\_\+register@{write\+\_\+register}}
+\index{write\+\_\+register@{write\+\_\+register}!N\+R\+F24@{N\+R\+F24}}
+\subsubsection{\texorpdfstring{write\+\_\+register()}{write\_register()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void N\+R\+F24\+::write\+\_\+register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{reg,  }\item[{std\+::array$<$ uint8\+\_\+t, 5 $>$ \&}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Writes multiple bytes to a register. 
+
+This function writes n bytes to one of the registers of the n\+R\+F24\+L01+ 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+n\+R\+F24\+L01+/\hyperlink{nrf24L01_8hpp}{nrf24\+L01.\+hpp}\item 
+n\+R\+F24\+L01+/\hyperlink{nrf24L01_8cpp}{nrf24\+L01.\+cpp}\end{DoxyCompactItemize}
