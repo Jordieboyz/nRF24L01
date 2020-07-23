@@ -24,8 +24,6 @@ int main(){
     RF24.write_adress_TX(adress);
     RF24.TX_mode();
 
-    checkON.write(1);
-
     for(;;)
     {
         bool buttonState = button.read();
